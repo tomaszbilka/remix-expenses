@@ -5,11 +5,11 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from '@remix-run/react';
+} from "@remix-run/react";
 
-import styles from '~/styles/shared.css';
+import styles from "~/styles/shared.css";
 
-export const links = () => [{ rel: 'stylesheet', href: styles }];
+export const links = () => [{ rel: "stylesheet", href: styles }];
 
 export default function App() {
   return (
@@ -17,6 +17,16 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
         <Meta />
         <Links />
       </head>

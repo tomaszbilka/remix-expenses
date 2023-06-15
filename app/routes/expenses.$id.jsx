@@ -1,7 +1,7 @@
 import ExpenseForm from "~/components/expenses/ExpenseForm";
 
-export const ExpensesAdd = () => {
+export const ExpenseDetails = () => {
   return <ExpenseForm />;
 };
 
-export default ExpensesAdd;
+export default ExpenseDetails;

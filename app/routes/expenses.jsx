@@ -1,15 +1,33 @@
-import { Outlet } from '@remix-run/react';
+import { Outlet } from "@remix-run/react";
+import ExpensesList from "~/components/expenses/ExpensesList";
 
-import styles from '~/styles/expenses.css';
+import styles from "~/styles/expenses.css";
 
-export const links = () => [{ rel: 'stylesheet', href: styles }];
+export const links = () => [{ rel: "stylesheet", href: styles }];
+
+const DUMMY_EXPENSES = [
+  {
+    id: "e1",
+    title: "First Expense",
+    amount: 12.99,
+    date: new Date().toISOString(),
+  },
+  {
+    id: "e2",
+    title: "Second Expense",
+    amount: 19.99,
+    date: new Date().toISOString(),
+  },
+];
 
 export const ExpensesLayout = () => {
   return (
-    <main>
-      <p>ExpensesLayout shared!</p>
+    <>
       <Outlet />
-    </main>
+      <main>
+        <ExpensesList expenses={DUMMY_EXPENSES} />
+      </main>
+    </>
   );
 };
 
