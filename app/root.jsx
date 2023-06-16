@@ -5,11 +5,13 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "@remix-run/react";
+} from '@remix-run/react';
 
-import styles from "~/styles/shared.css";
+import MainHeader from '~/components/navigation/MainHeader';
 
-export const links = () => [{ rel: "stylesheet", href: styles }];
+import styles from '~/styles/shared.css';
+
+export const links = () => [{ rel: 'stylesheet', href: styles }];
 
 export default function App() {
   return (
@@ -31,6 +33,7 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <MainHeader />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
