@@ -1,20 +1,16 @@
-import { Outlet } from "@remix-run/react";
-import ExpensesList from "~/components/expenses/ExpensesList";
-
-import styles from "~/styles/expenses.css";
-
-export const links = () => [{ rel: "stylesheet", href: styles }];
+import { Outlet } from '@remix-run/react';
+import ExpensesList from '~/components/expenses/ExpensesList';
 
 const DUMMY_EXPENSES = [
   {
-    id: "e1",
-    title: "First Expense",
+    id: 'e1',
+    title: 'First Expense',
     amount: 12.99,
     date: new Date().toISOString(),
   },
   {
-    id: "e2",
-    title: "Second Expense",
+    id: 'e2',
+    title: 'Second Expense',
     amount: 19.99,
     date: new Date().toISOString(),
   },
