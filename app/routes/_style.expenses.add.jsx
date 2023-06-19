@@ -1,13 +1,13 @@
-import { useNavigate } from '@remix-run/react';
+import { useNavigate } from "@remix-run/react";
 
-import ExpenseForm from '~/components/expenses/ExpenseForm';
-import Modal from '~/components/util/Modal';
+import ExpenseForm from "~/components/expenses/ExpenseForm";
+import Modal from "~/components/util/Modal";
 
 export const ExpensesAdd = () => {
   const navigate = useNavigate();
 
   const closeHandler = () => {
-    navigate('..');
+    navigate("..");
   };
 
   return (
@@ -18,3 +18,5 @@ export const ExpensesAdd = () => {
 };
 
 export default ExpensesAdd;
+
+export const action = async () => {};
