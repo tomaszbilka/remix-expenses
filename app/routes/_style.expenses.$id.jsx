@@ -1,6 +1,5 @@
 import { useNavigate } from "@remix-run/react";
 
-import { getExpense } from "~/data/expenses.server";
 import ExpenseForm from "~/components/expenses/ExpenseForm";
 import Modal from "~/components/util/Modal";
 
@@ -19,9 +18,3 @@ export const ExpenseDetails = () => {
 };
 
 export default ExpenseDetails;
-
-export const loader = async ({ params }) => {
-  const expenseId = params.id;
-  const expense = await getExpense(expenseId);
-  return expense;
-};
