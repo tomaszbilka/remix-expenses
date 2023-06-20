@@ -1,13 +1,14 @@
-import { useNavigate } from '@remix-run/react';
+import { useNavigate } from "@remix-run/react";
 
-import ExpenseForm from '~/components/expenses/ExpenseForm';
-import Modal from '~/components/util/Modal';
+import { getExpense } from "~/data/expenses.server";
+import ExpenseForm from "~/components/expenses/ExpenseForm";
+import Modal from "~/components/util/Modal";
 
 export const ExpenseDetails = () => {
   const navigate = useNavigate();
 
   const closeHandler = () => {
-    navigate('..');
+    navigate("..");
   };
 
   return (
@@ -18,3 +19,9 @@ export const ExpenseDetails = () => {
 };
 
 export default ExpenseDetails;
+
+export const loader = async ({ params }) => {
+  const expenseId = params.id;
+  const expense = await getExpense(expenseId);
+  return expense;
+};
