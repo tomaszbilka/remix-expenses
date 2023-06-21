@@ -1,4 +1,4 @@
-import { prisma } from './database.server';
+import { prisma } from "./database.server";
 
 export const addExpense = async (expenseData) => {
   //npx prisma generate -> in terminal to regenerate prisma client and add model from schema.prisma
@@ -20,7 +20,7 @@ export const getExpenses = async () => {
   try {
     const expenses = await prisma.expense.findMany({
       orderBy: {
-        date: 'desc',
+        date: "desc",
       },
     });
     return expenses;
@@ -53,6 +53,17 @@ export const updateExpense = async (id, expenseData) => {
         amount: +expenseData.amount,
         date: new Date(expenseData.date),
       },
+    });
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
+
+export const deleteExpense = async (id) => {
+  try {
+    await prisma.expense.delete({
+      where: { id },
     });
   } catch (error) {
     console.log(error);
