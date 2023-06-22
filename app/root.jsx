@@ -8,12 +8,12 @@ import {
   Scripts,
   ScrollRestoration,
   useRouteError,
-} from '@remix-run/react';
+} from "@remix-run/react";
 
-import Error from '~/components/util/Error';
-import styles from '~/styles/shared.css';
+import Error from "~/components/util/Error";
+import styles from "~/styles/shared.css";
 
-export const links = () => [{ rel: 'stylesheet', href: styles }];
+export const links = () => [{ rel: "stylesheet", href: styles }];
 
 const Document = ({ title, children }) => (
   <html lang="en">
@@ -58,7 +58,7 @@ export const ErrorBoundary = () => {
       <Document title={error.statusText}>
         <main>
           <Error title={error.statusText}>
-            <p>{error?.message || 'Sth went wrong! Try again later!'}</p>
+            <p>{error?.statusText || "Sth went wrong! Try again later!"}</p>
             <p>
               Back to <Link to="/">safety</Link>
             </p>
@@ -67,12 +67,11 @@ export const ErrorBoundary = () => {
       </Document>
     );
   }
-
   return (
     <Document title="An error">
       <main>
         <Error title="An error">
-          <p>{error?.message || 'Sth went wrong! Try again later!'}</p>
+          <p>{error?.message || "Sth went wrong! Try again later!"}</p>
           <p>
             Back to <Link to="/">safety</Link>
           </p>
